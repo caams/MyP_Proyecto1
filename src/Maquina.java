@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 
-public class Maquina implements PedidoValido{
+public abstract class Maquina{
 
   private ArrayList<Ingrediente> ingredientes;
+  private ArrayList<Producto> recetas;
   private EstadoMaquina estadoActual;
   private EstadoMaquina suspendido;
   private EstadoMaquina apagando;
@@ -36,4 +37,8 @@ public class Maquina implements PedidoValido{
   public EstadoMaquina getEstadoActual(){
     return this.estadoActual;
   }
+
+  public abstract Producto creaProducto1();
+  public abstract Producto creaProducto2();
+  public abstract Producto creaProducto3();
 }

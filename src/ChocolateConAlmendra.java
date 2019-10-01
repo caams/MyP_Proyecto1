@@ -3,11 +3,11 @@ public class ChocolateConAlmendra extends Chocolate{
   public ChocolateConAlmendra(){
   }
 
-  @Override public void preparaBase(){
+  @Override public void prepararBase(){
 
   }
 
-  @Override public void agregaComplemento(){
+  @Override public void agregarComplemento(){
 
   }
 }

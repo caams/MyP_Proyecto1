@@ -2,35 +2,21 @@ import java.util.ArrayList;
 
 public abstract class Galleta{
 
-  private String nombre;
-  private int id;
-  private ArrayList<Ingrediente> ingredientes;
+  public Galleta(){
 
-  public Galleta(String nombre, int id){
-    this.nombre = nombre;
-    this.id = id;
   }
 
-  public Strig getNombre(){
-    return  this.nombre;
-  }
-
-  public int getID(){
-    return this.id;
-  }
-
-  public ArrayList<Ingrediente> getIngredintes(){
-    return this.ingredientes;
-  }
-
-  prepararGalleta(){
+  public void prepararGalleta(){
+    elegirMolde();
     prepararMasa();
     enmoldar();
     hornear();
-    ponerComplementos();
+    agregarComplemento();
   }
 
-  public void prepararMasa();
+  public void elegirMolde(){
+
+  }
 
   public void enmoldar(){
 
@@ -40,5 +26,4 @@ public abstract class Galleta{
 
   }
 
-  public void ponerComplementos();
 }

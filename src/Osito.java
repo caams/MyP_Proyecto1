@@ -8,7 +8,7 @@ public class Osito extends Gomita{
 
   }
 
-  @Override public void agregaComplemento(){
+  @Override public void agregarComplemento(){
 
   }
 }

@@ -8,7 +8,7 @@ public class GalletaConMermelada extends Galleta{
 
   }
 
-  @Override public void ponerComplementos(){
+  @Override public void agregarComplemento(){
 
   }
 }

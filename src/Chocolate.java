@@ -1,28 +1,21 @@
-public abstract class Chocolate extends Dulce{
+public abstract class Chocolate extends Producto{
 
   public Chocolate(String sabor){
-    if(sabor.equalsIgnoreCase("con leche")){
-      return new ChocolateConLeche();
-    }else if(sabor.equalsIgnoreCase("con almendra")){
-      return new ChocolateConAlmendra();
-    }else if(sabor.equalsIgnoreCase("oscuro")){
-      return new ChocolateOscuro();
-    }
-    return null;
+
   }
 
-  public void preparaDulce(){
-    preparaBase();
+  @Override public void preparaProducto(){
+    elegirMolde();
+    prepararBase();
     enmoldar();
-    agregaComplemento();
+    agregarComplemento();
   }
 
-  public void enmoldar(){
+  @Override public void elegirMolde(){
 
   }
 
-  public abstract void preparaBase();
+  @Override public void enmoldar(){
 
-  public abstract void agregaComplemento();
-
+  }
 }

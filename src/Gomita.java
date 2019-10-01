@@ -1,27 +1,21 @@
-public abstract class Gomita extends Dulce{
+public abstract class Gomita extends Producto{
 
   public Gomita(String sabor){
-    if(sabor.equalsIgnoreCase("gusanito")){
-      return new Gusanito();
-    }else if(sabor.equalsIgnoreCase("frutita")){
-      return new Frutita();
-    }else if(sabor.equalsIgnoreCase("osito")){
-      return new Osito();
-    }
-    return null;
+
   }
 
-  public void preparaDulce(){
-    preparaBase();
+  @Override public void preparaProducto(){
+    elegirMolde();
+    prepararBase();
     enmoldar();
-    agregaComplemento();
+    agregarComplemento();
   }
 
-  public abstract void preparaBase(){
+  @Override public void elegirMolde(){
 
   }
 
-  public abstract void enmoldar();
+  @Override public void prepararBase(){
 
-  public abstract void agregaComplemento();
+  }
 }
