@@ -4,13 +4,6 @@ public abstract class Gomita extends Producto{
 
   }
 
-  @Override public void preparaProducto(){
-    elegirMolde();
-    prepararBase();
-    enmoldar();
-    agregarComplemento();
-  }
-
   @Override public void elegirMolde(){
 
   }

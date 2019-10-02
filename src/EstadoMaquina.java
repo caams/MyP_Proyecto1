@@ -10,5 +10,7 @@ public interface EstadoMaquina{
 
   public void reabastecerse();
 
+  public void empacar();
+
   public void entregar();
 }

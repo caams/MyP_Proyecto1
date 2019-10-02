@@ -1,4 +1,4 @@
-public class ReposteroEncargado{
+public class ReposteroEncargado implements SolicitarPedido{
 
   private String nombre;
 
@@ -6,7 +6,11 @@ public class ReposteroEncargado{
     this.nombre = nombre;
   }
 
-  public void notificaMaquina(){
+  @Override public void solicitarPedido(){
     
+  }
+
+  public void notificaMaquina(){
+
   }
 }

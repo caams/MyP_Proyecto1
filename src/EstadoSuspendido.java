@@ -26,6 +26,10 @@ public class EstadoSuspendido implements EstadoMaquina{
 
   }
 
+  @Override public void empacar(){
+
+  }
+
   @Override public void entregar(){
 
   }

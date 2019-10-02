@@ -11,10 +11,14 @@ public abstract class Producto{
     return this.ingredientes;
   }
 
-  public abstract void preparaProducto();
+  public abstract void preparaProducto(){
+    elegirMolde();
+    prepararBase();
+    enmoldar();
+    agregarComplemento();
+  }
   public abstract void elegirMolde();
   public abstract void prepararBase();
   public abstract void enmoldar();
   public abstract void agregarComplemento();
-
 }

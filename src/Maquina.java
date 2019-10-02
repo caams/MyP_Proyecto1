@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public abstract class Maquina{
+public abstract class Maquina implements Pedido{
 
   private ArrayList<Ingrediente> ingredientes;
   private ArrayList<Producto> recetas;
@@ -9,6 +9,10 @@ public abstract class Maquina{
   private EstadoMaquina apagando;
   private EstadoMaquina preparando;
   private EstadoMaquina empacando;
+
+  public Maquina(){
+
+  }
 
   public void activarse(){
 
@@ -23,6 +27,10 @@ public abstract class Maquina{
   }
 
   public void reabastecerse(){
+
+  }
+
+  public void empacar(){
 
   }
 

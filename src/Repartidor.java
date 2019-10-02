@@ -1,4 +1,4 @@
-public class Repartidor{
+public class Repartidor implements UpdateRepartidor{
 
   private String nombre;
   private int id;

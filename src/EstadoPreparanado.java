@@ -26,6 +26,10 @@ public class EstadoPreparando implements EstadoMaquina{
 
   }
 
+  @Override public void empacar(){
+
+  }
+
   @Override public void entregar(){
 
   }

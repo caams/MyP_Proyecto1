@@ -4,13 +4,6 @@ public abstract class Chocolate extends Producto{
 
   }
 
-  @Override public void preparaProducto(){
-    elegirMolde();
-    prepararBase();
-    enmoldar();
-    agregarComplemento();
-  }
-
   @Override public void elegirMolde(){
 
   }

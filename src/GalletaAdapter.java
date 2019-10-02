@@ -2,8 +2,8 @@ public class GalletaAdapter extends Producto{
 
   private Galleta galleta;
 
-  @Override public void prepararBase(){
-
+  public GalletaAdapter(Galleta galleta){
+    this.galleta = galleta;
   }
 
   @Override public void elegirMolde(){

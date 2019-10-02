@@ -5,6 +5,6 @@ public class Sucursal1{
   private int id;
   private String direccion;
   private ResposteroEncargado respostero;
-  private LinkedList<Producto> inventario;
+  private LinkedList<Lote> inventario;
 
 }
