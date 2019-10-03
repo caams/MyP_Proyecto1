@@ -11,7 +11,7 @@ public class EstadoSuspendido implements EstadoMaquina{
   }
 
   @Override public void suspenderse(){
-    System.out.println("La maquina ya se encuentra encendida y en estado de suspensión.")
+    System.out.println("La maquina ya se encuentra encendida y en estado de suspensión.");
   }
 
   @Override public void apagarse(){
@@ -32,11 +32,11 @@ public class EstadoSuspendido implements EstadoMaquina{
 
   @Override public void empacar(){
     System.out.println("La maquina no puede empacar un pedido mientras"+
-                       " se encuentra suspendida.")
+                       " se encuentra suspendida.");
   }
 
   @Override public void entregar(){
     System.out.println("La maquina no puede entregar un pedido mientras"+
-                       " se encuentra suspendida.")
+                       " se encuentra suspendida.");
   }
 }

@@ -10,7 +10,7 @@ public class Ingrediente{
     this.cantidad = cantidad;
   }
 
-  public Strig getNombre(){
+  public String getNombre(){
     return  this.nombre;
   }
 

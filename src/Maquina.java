@@ -6,7 +6,7 @@ public abstract class Maquina implements Pedido{
   private ArrayList<Producto> recetas;
   private EstadoMaquina estadoActual;
   private EstadoMaquina suspendido;
-  private EstadoMaquina apagando;
+  private EstadoMaquina apagado;
   private EstadoMaquina preparando;
   private EstadoMaquina empacando;
 
@@ -14,24 +14,24 @@ public abstract class Maquina implements Pedido{
     this.suspendido = new EstadoSuspendido(this);
     this.apagado = new EstadoApagado(this);
     this.preparando = new EstadoPreparando(this);
-    this.empacabado = new EstadoEmpacando(this);
+    this.empacando = new EstadoEmpacando(this);
     this.estadoActual = apagado;
     this.ingredientes = ingredientes;
   }
 
-  public EtaadoMaquina getEstadoSuspendido(){
+  public EstadoMaquina getEstadoSuspendido(){
     return this.suspendido;
   }
 
-  public EtaadoMaquina getEstadoApagado(){
+  public EstadoMaquina getEstadoApagado(){
     return this.apagado;
   }
 
-  public EtaadoMaquina getEstadoPreparando(){
+  public EstadoMaquina getEstadoPreparando(){
     return this.preparando;
   }
 
-  public EtaadoMaquina getEstadoEmpacando(){
+  public EstadoMaquina getEstadoEmpacando(){
     return this.empacando;
   }
 
@@ -60,7 +60,7 @@ public abstract class Maquina implements Pedido{
   }
 
   public void actualizarEstado(EstadoMaquina nuevoEstado){
-    this.estadoActual = nuevoEstado;x
+    this.estadoActual = nuevoEstado;
   }
 
   public EstadoMaquina getEstadoActual(){

@@ -3,12 +3,12 @@ public class EstadoApagado implements EstadoMaquina{
   private Maquina maquina;
 
   public EstadoApagado(Maquina maquina){
-    this.maquin = maquina;
+    this.maquina = maquina;
   }
 
   @Override public void activarse(){
     System.out.println("Activando maquina...");
-    this.maquina.actualizarEstado(maquina.getEstadoSuspendido());x
+    this.maquina.actualizarEstado(maquina.getEstadoSuspendido());
     System.out.println("Maquina activa y en estado de suspensión");
   }
 

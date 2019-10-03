@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class Producto{
 
   private String nombre;
@@ -11,7 +13,7 @@ public abstract class Producto{
     return this.ingredientes;
   }
 
-  public abstract void preparaProducto(){
+  public void preparaProducto(){
     elegirMolde();
     prepararBase();
     enmoldar();
