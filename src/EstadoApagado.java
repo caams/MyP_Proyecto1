@@ -21,7 +21,7 @@ public class EstadoApagado implements EstadoMaquina{
     System.out.println("La maquina ya está apagada.");
   }
 
-  @Override public void prepararDulce(){
+  @Override public void prepararPedido(){
     System.out.println("La maquina no pude preparar dulces mientras está apagada");
   }
 

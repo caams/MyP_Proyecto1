@@ -8,7 +8,5 @@ public class GalletaSalada extends Galleta{
     System.out.println("Preparando masa para galletas saladas");
   }
 
-  @Override public void agregarComplemento(){
-
-  }
+  @Override public void agregarComplemento(){}
 }
