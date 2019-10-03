@@ -19,6 +19,22 @@ public abstract class Maquina implements Pedido{
     this.ingredientes = ingredientes;
   }
 
+  public EtaadoMaquina getEstadoSuspendido(){
+    return this.suspendido;
+  }
+
+  public EtaadoMaquina getEstadoApagado(){
+    return this.apagado;
+  }
+
+  public EtaadoMaquina getEstadoPreparando(){
+    return this.preparando;
+  }
+
+  public EtaadoMaquina getEstadoEmpacando(){
+    return this.empacando;
+  }
+
   public void activarse(){
     this.estadoActual.activarse();
   }
