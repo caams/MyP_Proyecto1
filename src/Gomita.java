@@ -1,9 +1,5 @@
 public abstract class Gomita extends Producto{
 
-  public Gomita(String sabor){
-
-  }
-
   @Override public void prepararBase(){
 
   }

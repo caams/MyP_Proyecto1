@@ -1,9 +1,5 @@
 public abstract class Chocolate extends Producto{
 
-  public Chocolate(String sabor){
-
-  }
-
   @Override public void elegirMolde(){
     System.out.println("Tomando molde para chocolates")
   }

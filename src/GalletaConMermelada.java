@@ -1,9 +1,5 @@
 public class GalletaConMermelada extends Galleta{
 
-  public GalletaConMermelada(){
-
-  }
-
   @Override public void prepararMasa(){
     System.out.println("Preparando masa para galletas dulces");
   }

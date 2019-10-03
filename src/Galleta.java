@@ -2,10 +2,6 @@ import java.util.ArrayList;
 
 public abstract class Galleta{
 
-  public Galleta(){
-
-  }
-
   public void prepararGalleta(){
     elegirMolde();
     prepararMasa();
