@@ -19,4 +19,49 @@ public abstract class Wonka3000 extends Maquina{
     this.recetas = recetas;
   }
 
+  @Override public Producto creaProducto1(String tipo){
+    String tipo2 = tipo.toLowerCase();
+    switch(tipo2){
+      case "chocolate":
+        return new ChocolateOscuro();
+        break;
+      case "gomita":
+        return new Gusanito();
+        break;
+      default:
+        return null;
+    }
+    return null;
+  }
+
+  @Override public Producto creaProducto2(String tipo){
+    String tipo2 = tipo.toLowerCase();
+    switch(tipo2){
+      case "chocolate":
+        return new ChocolateConLeche();
+        break;
+      case "gomita":
+        return new Frutita();
+        break;
+      default:
+        return null;
+    }
+    return null;
+  }
+
+  @Override public Producto creaProducto3(String tipo){
+    String tipo2 = tipo.toLowerCase();
+    switch(tipo2){
+      case "chocolate":
+        return new ChocolateConAlmendra();
+        break;
+      case "gomita":
+        return new Osito();
+        break;
+      default:
+        return null;
+    }
+    return null;
+  }
+
 }

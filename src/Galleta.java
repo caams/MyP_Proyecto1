@@ -2,6 +2,18 @@ import java.util.ArrayList;
 
 public abstract class Galleta{
 
+  @Override public Producto creaProducto1(String tipo){
+    return new GalletaSalada();
+  }
+
+  @Override public Producto creaProducto2(String tipo){
+    return new GalletaConChispas();
+  }
+
+  @Override public Producto creaProducto3(String tipo){
+    return new GalletaConMermelada();
+  }
+
   public void prepararGalleta(){
     elegirMolde();
     prepararMasa();
@@ -22,7 +34,7 @@ public abstract class Galleta{
     System.out.println("Hornenado las galletas");
   }
 
-  public abstract prepararMasa();
-  public abstract agregarComplemento();
+  public abstract void prepararMasa();
+  public abstract void agregarComplemento();
 
 }

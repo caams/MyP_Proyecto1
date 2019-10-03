@@ -67,7 +67,7 @@ public abstract class Maquina implements Pedido{
     return this.estadoActual;
   }
 
-  public abstract Producto creaProducto1();
-  public abstract Producto creaProducto2();
-  public abstract Producto creaProducto3();
+  public abstract Producto creaProducto1(String tipo);
+  public abstract Producto creaProducto2(String tipo);
+  public abstract Producto creaProducto3(String tipo);
 }
