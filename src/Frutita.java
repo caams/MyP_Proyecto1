@@ -8,7 +8,7 @@ public class Frutita extends Gomita{
     System.out.println("Tomando molde para frutitas");
   }
 
-  @Override public void agregaComplemento(){
+  @Override public void agregarComplemento(){
     System.out.println("Agregando cobertura de chamoy");
   }
 }

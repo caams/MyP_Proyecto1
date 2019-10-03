@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 
-public abstract class Wonka3000 extends Maquina{
+public class Wonka3000 extends Maquina{
 
-  public Wonka3000(){
+  public Wonka3000(ArrayList<Ingrediente> ingredientes){
+    this.ingredientes = ingredientes;
     ArrayList<Producto> recetas = new ArrayList<>();
     Producto gusanito = new Gusanito();
     Producto frutita = new Frutita();
@@ -24,14 +25,11 @@ public abstract class Wonka3000 extends Maquina{
     switch(tipo2){
       case "chocolate":
         return new ChocolateOscuro();
-        break;
       case "gomita":
         return new Gusanito();
-        break;
       default:
         return null;
     }
-    return null;
   }
 
   @Override public Producto creaProducto2(String tipo){
@@ -39,14 +37,11 @@ public abstract class Wonka3000 extends Maquina{
     switch(tipo2){
       case "chocolate":
         return new ChocolateConLeche();
-        break;
       case "gomita":
         return new Frutita();
-        break;
       default:
         return null;
     }
-    return null;
   }
 
   @Override public Producto creaProducto3(String tipo){
@@ -54,14 +49,11 @@ public abstract class Wonka3000 extends Maquina{
     switch(tipo2){
       case "chocolate":
         return new ChocolateConAlmendra();
-        break;
       case "gomita":
         return new Osito();
-        break;
       default:
         return null;
     }
-    return null;
   }
 
 }

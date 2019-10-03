@@ -1,22 +1,21 @@
 import java.util.ArrayList;
 
-public abstract class Maquina implements Pedido{
+public abstract class Maquina{
 
-  private ArrayList<Ingrediente> ingredientes;
-  private ArrayList<Producto> recetas;
-  private EstadoMaquina estadoActual;
-  private EstadoMaquina suspendido;
-  private EstadoMaquina apagado;
-  private EstadoMaquina preparando;
-  private EstadoMaquina empacando;
+  protected ArrayList<Ingrediente> ingredientes;
+  protected ArrayList<Producto> recetas;
+  protected EstadoMaquina estadoActual;
+  protected EstadoMaquina suspendido;
+  protected EstadoMaquina apagado;
+  protected EstadoMaquina preparando;
+  protected EstadoMaquina empacando;
 
-  public Maquina(ArrayList<Ingrediente> ingredientes){
+  public Maquina(){
     this.suspendido = new EstadoSuspendido(this);
     this.apagado = new EstadoApagado(this);
     this.preparando = new EstadoPreparando(this);
     this.empacando = new EstadoEmpacando(this);
     this.estadoActual = apagado;
-    this.ingredientes = ingredientes;
   }
 
   public EstadoMaquina getEstadoSuspendido(){

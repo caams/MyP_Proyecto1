@@ -4,7 +4,7 @@ public class Gusanito extends Gomita{
     System.out.println("Eligiendo molde de gusanitos");
   }
 
-  @Override public void agregaComplemento(){
+  @Override public void agregarComplemento(){
     System.out.println("Agregando cobertura ácida");
   }
 }

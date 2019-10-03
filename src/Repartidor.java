@@ -15,4 +15,6 @@ public class Repartidor implements UpdateRepartidor{
   public int getRFC(){
     return this.rfc;
   }
+
+  @Override public void update(){}
 }

@@ -4,7 +4,7 @@ public class Sucursal3{
 
   private int id;
   private String direccion;
-  private ResposteroEncargado respostero;
+  private ReposteroEncargado respostero;
   private Hashtable<Integer, Lote> inventario;
 
 }

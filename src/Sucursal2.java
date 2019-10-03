@@ -4,7 +4,7 @@ public class Sucursal2{
 
   private int id;
   private String direccion;
-  private ResposteroEncargado respostero;
+  private ReposteroEncargado respostero;
   private ArrayList<Lote> inventario;
 
 }

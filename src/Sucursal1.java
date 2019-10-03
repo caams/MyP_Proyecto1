@@ -4,13 +4,13 @@ public class Sucursal1{
 
   private int id;
   private String direccion;
-  private ResposteroEncargado respostero;
+  private ReposteroEncargado respostero;
   private LinkedList<Lote> inventario;
 
   public void displayInventario(){
     for(Lote lote : inventario){
       System.out.println("Producto: " + lote.getProducto().getNombre());
-      System.out.println("Cantidad: " + (String)lote.getCantidad() + "\n");
+      System.out.println(String.format("Cantidad: %d\n", lote.getCantidad()));
     }
   }
 
