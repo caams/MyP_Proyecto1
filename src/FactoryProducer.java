@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-
 public class FactoryProducer{
 
-  public Maquina getFactory(String tipo, ArrayList<Ingrediente> ingredientes){
+  public Maquina getFactory(String tipo){
     if(tipo.equalsIgnoreCase("dulce"))
-      return new Wonka3000(ingredientes);
+      return new Wonka3000();
     else if(tipo.equalsIgnoreCase("galleta"))
-      return new Galleneitor5000(ingredientes);
+      return new Galleneitor5000();
     return null;
   }
 
