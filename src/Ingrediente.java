@@ -10,7 +10,7 @@ public class Ingrediente{
     this.cantidad = cantidad;
   }
 
-  public Strig getNombre(){
+  public String getNombre(){
     return  this.nombre;
   }
 
@@ -24,5 +24,9 @@ public class Ingrediente{
 
   public void setCantidad(int cantidad){
     this.cantidad = cantidad;
+  }
+
+  public void resetCantidad(){
+    this.cantidad = 100000;
   }
 }

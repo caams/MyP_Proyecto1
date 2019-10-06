@@ -12,7 +12,13 @@ public class Repartidor implements UpdateRepartidor{
     return this.id;
   }
 
-  public getRFC(){
+  public int getRFC(){
     return this.rfc;
   }
+
+  public void entregarPedido(Lote pedido){
+    
+  }
+
+  @Override public void update(){}
 }

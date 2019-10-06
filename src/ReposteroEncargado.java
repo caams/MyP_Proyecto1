@@ -1,13 +1,9 @@
-public class ReposteroEncargado implements SolicitarPedido{
+public class ReposteroEncargado{
 
   private String nombre;
 
-  public ResposteroEncargado(String nombre){
+  public ReposteroEncargado(String nombre){
     this.nombre = nombre;
-  }
-
-  @Override public void solicitarPedido(){
-    
   }
 
   public void notificaMaquina(){
