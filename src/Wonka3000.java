@@ -45,12 +45,12 @@ public class Wonka3000 extends Maquina{
    * </ol>
    * @return null en otro caso.
    */
-  @Override public Producto creaProducto1(String tipo){
+  @Override public Producto creaProducto(String tipo){
     tipo = tipo.toLowerCase();
     if(tipo.contains("chocolate"))
-      return creaProducto2(tipo);
+      return creaProducto1(tipo);
     else if(tipo.contains("gomita"))
-      return creaProducto3(tipo);
+      return creaProducto2(tipo);
     return null;
     }
 
@@ -64,7 +64,7 @@ public class Wonka3000 extends Maquina{
    * </ol>
    * @return null en otro caso.
    */
-  @Override public Producto creaProducto2(String tipo){
+  public Producto creaProducto1(String tipo){
     if(tipo.contains("oscuro"))
       return new ChocolateOscuro();
     else if(tipo.contains("con leche"))
@@ -84,7 +84,7 @@ public class Wonka3000 extends Maquina{
    * </ol>
    * @return null en otro caso.
    */
-  @Override public Producto creaProducto3(String tipo){
+  public Producto creaProducto2(String tipo){
     if(tipo.contains("frutita"))
       return new Frutita();
     else if(tipo.contains("gusanito"))

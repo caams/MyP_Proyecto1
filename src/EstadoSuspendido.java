@@ -6,6 +6,10 @@ public class EstadoSuspendido implements EstadoMaquina{
     this.maquina = maquina;
   }
 
+  @Override public void encenderse(){
+    System.out.println("La maquina ya está encendida.");
+  }
+
   @Override public void activarse(){
     System.out.println("Activando la maquina...");
     this.maquina.actualizarEstado(this.maquina.getEstadoActivado());
@@ -22,17 +26,18 @@ public class EstadoSuspendido implements EstadoMaquina{
     System.out.println("Maquina apagada.");
   }
 
-  @Override public void prepararPedido(){
+  @Override public Producto prepararPedido(String tipo){
     System.out.println("La maquina no puede preparar un pedido mientras"+
                        " se encuentra suspendida.");
+    return null;
   }
 
-  @Override public void reabastecerse(){
+  @Override public void reabastecerse(Ingrediente ingrediente){
     System.out.println("La maquina no puede reabastecerse mientras"+
                        " se encuentra suspendida.");
   }
 
-  @Override public void empacar(){
+  @Override public void empacar(Producto producto){
     System.out.println("La maquina no puede empacar un pedido mientras"+
                        " se encuentra suspendida.");
   }

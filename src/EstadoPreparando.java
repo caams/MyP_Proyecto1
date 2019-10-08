@@ -3,7 +3,11 @@ public class EstadoPreparando implements EstadoMaquina{
   private Maquina maquina;
 
   public EstadoPreparando(Maquina maquina){
+    this.maquina = maquina;
+  }
 
+  @Override public void encenderse(){
+    System.out.println("La maquina ya está encendida.");
   }
 
   @Override public void activarse(){
@@ -18,16 +22,17 @@ public class EstadoPreparando implements EstadoMaquina{
     System.out.println("La maquina no se puede apagar mientras se prepara un lote.");
   }
 
-  @Override public void prepararPedido(){
+  @Override public Producto prepararPedido(String tipo){
     System.out.println("La maquina solo puede preparar un dulce a la vez");
+    return null;
   }
 
-  @Override public void reabastecerse(){
+  @Override public void reabastecerse(Ingrediente ingrediente){
     System.out.println("La maquina no se puede reabastecer mientras"+
                        " está preparando un lote.");
   }
 
-  @Override public void empacar(){
+  @Override public void empacar(Producto producto){
     System.out.println("La maquina no puede empacar mientras está preparando un lote.");
   }
 

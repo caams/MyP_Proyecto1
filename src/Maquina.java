@@ -34,6 +34,10 @@ public abstract class Maquina{
     this.estadoActual = apagado;
   }
 
+  public ArrayList<Ingrediente> getIngredientes(){
+    return this.ingredientes;
+  }
+
   /**
    * Regresa el estado suspendido de la máquina.
    * @return el estado suspendido de la máquina.
@@ -74,6 +78,10 @@ public abstract class Maquina{
     return this.empacando;
   }
 
+  public void encenderse(){
+    this.estadoActual.encenderse();
+  }
+
   /* Activa la máquina. */
   public void activarse(){
     this.estadoActual.activarse();
@@ -89,14 +97,18 @@ public abstract class Maquina{
     this.estadoActual.apagarse();
   }
 
+  public Producto prepararPedido(String tipo){
+    return this.estadoActual.prepararPedido(tipo);
+  }
+
   /* Reabastece de ingredientes la máquina. */
-  public void reabastecerse(){
-    this.estadoActual.reabastecerse();
+  public void reabastecerse(Ingrediente ingrediente){
+    this.estadoActual.reabastecerse(ingrediente);
   }
 
   /* Pone la máquina en estado empacando. */
-  public void empacar(){
-    this.estadoActual.empacar();
+  public void empacar(Producto producto){
+    this.estadoActual.empacar(producto);
   }
 
   /* Pone la máquina en estado entregando. */
@@ -118,7 +130,5 @@ public abstract class Maquina{
   }
 
   /* Métodos abstractos para crear productos. */
-  public abstract Producto creaProducto1(String tipo);
-  public abstract Producto creaProducto2(String tipo);
-  public abstract Producto creaProducto3(String tipo);
+  public abstract Producto creaProducto(String tipo);
 }

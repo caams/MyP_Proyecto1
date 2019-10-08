@@ -30,16 +30,14 @@ public class Galleneitor5000 extends Maquina{
     recetas.add(salada);
   }
 
-  @Override public Producto creaProducto1(String tipo){
-    return new GalletaAdapter(new GalletaSalada());
+  @Override public Producto creaProducto(String tipo){
+    if(tipo.contains("salada")){
+      return new GalletaAdapter(new GalletaSalada());
+    }else if(tipo.contains("con chispas")){
+      return new GalletaAdapter(new GalletaConChispas());
+    }else if(tipo.contains("con mermelada")){
+      return new GalletaAdapter(new GalletaConMermelada());
+    }
+    return null;
   }
-
-  @Override public Producto creaProducto2(String tipo){
-    return new GalletaAdapter(new GalletaConChispas());
-  }
-
-  @Override public Producto creaProducto3(String tipo){
-    return new GalletaAdapter(new GalletaConMermelada());
-  }
-
 }

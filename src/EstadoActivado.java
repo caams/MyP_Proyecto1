@@ -6,6 +6,10 @@ public class EstadoActivado implements EstadoMaquina{
     this.maquina = maquina;
   }
 
+  @Override public void encenderse(){
+    System.out.println("La maquina ya está encendida y activa.");
+  }
+
   @Override public void activarse(){
     System.out.println("La maquina ya está activa.");
   }
@@ -23,29 +27,20 @@ public class EstadoActivado implements EstadoMaquina{
   }
 
   @Override public Producto prepararPedido(String tipo){
-    if(this.maquina instanceof Wonka3000){
-      return creaProducto1(tipo);
-    }else{
-      if(tipo.contains("salada"))
-        maquina.creaProducto1(tipo);
-      else if(tipo.contains("con chispas"))
-        maquina.creaProducto2(tipo);
-      else if(tipo.contains("con mermelada"))
-        maquina.creaProducto3();
-    }
-    return null;
+    Producto producto = this.maquina.creaProducto(tipo);
+    producto.preparaProducto();
+    return producto;
   }
 
   @Override public void reabastecerse(Ingrediente ingrediente){
     for(Ingrediente ingredint : this.maquina.getIngredientes()){
-      if(ingredint.getID == ingrediente.getID())
-        this.ingredint.resetCantidad();
+      if(ingredint.getID() == ingrediente.getID())
+        ingredint.resetCantidad();
     }
   }
 
-  @Override public Lote empacar(Producto producto){
-    Lote nuevoLote = new Lote(producto.getNombre(), 1000);
-    return nuevoLote;
+  @Override public void empacar(Producto producto){
+    Lote nuevoLote = new Lote(producto, 1000);
   }
 
   @Override public void entregar(){

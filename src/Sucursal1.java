@@ -1,17 +1,19 @@
 import java.util.LinkedList;
+import java.util.ArrayList;
 
-public class Sucursal1{
+public class Sucursal1 extends Sucursal{
 
-  private int id;
-  private String direccion;
-  private ReposteroEncargado respostero;
   private LinkedList<Lote> inventario;
 
-  public void displayInventario(){
-    for(Lote lote : inventario){
-      System.out.println("Producto: " + lote.getProducto().getNombre());
-      System.out.println(String.format("Cantidad: %d\n", lote.getCantidad()));
+  @Override public ArrayList<Lote> toArrayList(){
+    ArrayList<Lote> nuevoInventario = new ArrayList<>();
+    for(Lote lote : this.inventario){
+      nuevoInventario.add(lote);
     }
+    return nuevoInventario;
   }
 
+  @Override public void agregaInventario(Lote lote){
+    this.inventario.add(lote);
+  }
 }

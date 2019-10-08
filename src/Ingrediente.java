@@ -27,6 +27,16 @@ public class Ingrediente{
   }
 
   public void resetCantidad(){
+    System.out.println("El suministro de " + this.nombre + " se ha agotado "
+                       + " por lo que se reabastecerá.");
     this.cantidad = 100000;
+  }
+
+  public void usar(int cantUsada){
+    if(this.cantidad == 0){
+      this.resetCantidad();
+    }else{
+      this.cantidad = this.cantidad - cantUsada;
+    }
   }
 }

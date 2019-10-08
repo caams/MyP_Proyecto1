@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Clase abstracta para productos. 
+ * Clase abstracta para productos.
  * Los productos tienen un nombre y una lista de ingredientes.
  */
 public abstract class Producto{
@@ -10,6 +10,8 @@ public abstract class Producto{
   private String nombre;
   /* Lista de ingredientes para el producto. */
   private ArrayList<Ingrediente> ingredientes;
+
+  private Maquina maquina;
 
   /**
    * Regresa el nombre del producto.
@@ -27,6 +29,18 @@ public abstract class Producto{
     return this.ingredientes;
   }
 
+  public void setIngredientes(ArrayList<Ingrediente> ingredientes){
+    this.ingredientes = ingredientes;
+  }
+
+  public void setMaquina(Maquina maquina){
+    this.maquina = maquina;
+  }
+
+  public Maquina getMaquina(){
+    return this.maquina;
+  }
+
   /**
    * Método template para preparar la receta de cada producto.
    * Todos los métodos que utiliza son hooks.
@@ -37,6 +51,7 @@ public abstract class Producto{
     enmoldar();
     agregarComplemento();
   }
+
   public abstract void elegirMolde();
   public abstract void prepararBase();
   public abstract void enmoldar();

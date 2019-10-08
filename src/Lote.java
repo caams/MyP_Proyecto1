@@ -4,7 +4,11 @@ public class Lote{
 
   private Producto producto;
   private int cantidad;
-  private ArrayList<Ingrediente> ingredientes;
+
+  public Lote(Producto producto, int cantidad){
+    this.producto = producto;
+    this.cantidad = cantidad;
+  }
 
   public Producto getProducto(){
     return this.producto;
@@ -12,9 +16,5 @@ public class Lote{
 
   public int getCantidad(){
     return this.cantidad;
-  }
-
-  public ArrayList<Ingrediente> getIngredientes(){
-    return this.ingredientes;
   }
 }

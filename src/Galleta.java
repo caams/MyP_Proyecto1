@@ -2,6 +2,13 @@ import java.util.ArrayList;
 
 public abstract class Galleta{
 
+  public Galleta(){
+    this.setIngredientes(new ArrayList<Ingrediente>());
+    this.getIngredientes().add(new Ingrediente("Harina", 13, 2000));
+    this.getIngredientes().add(new Ingrediente("Leche", 5, 2000));
+    this.getIngredientes().add(new Ingrediente("Huevo", 14, 2000));
+  }
+
   public void prepararGalleta(){
     elegirMolde();
     prepararMasa();
