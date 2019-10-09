@@ -38,6 +38,11 @@ public abstract class Producto{
       Ingrediente ing = this.getIngrediente(ingrediente);
       System.out.println(String.format("  Agregando %2.2f kilos de %s...",
                          ((double)ing.getCantidad())/1000, ing.getNombre()));
+      try{
+        Thread.sleep(1000);
+      }catch(InterruptedException ie){
+        System.out.println("Hilo de ejecución interrumpido.");
+      }
       ing.drawIngredientes(this.creador);
     }
   }

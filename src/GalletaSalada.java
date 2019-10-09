@@ -7,6 +7,11 @@ public class GalletaSalada extends Galleta{
 
   @Override public void prepararMasa(){
     System.out.println("Preparando masa para galletas saladas...");
+    try{
+      Thread.sleep(1000);
+    }catch(InterruptedException ie){
+      System.out.println("Hilo de ejecución interrumpido.");
+    }
     this.utilizarIngrediente("Harina");
     this.utilizarIngrediente("Leche");
     this.utilizarIngrediente("Huevo");

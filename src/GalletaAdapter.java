@@ -19,6 +19,11 @@ public class GalletaAdapter extends Producto{
 
   @Override public void enmoldar(){
     this.galleta.enmoldar();
+    try{
+      Thread.sleep(1000);
+    }catch(InterruptedException ie){
+      System.out.println("Hilo de ejecución interrumpido.");
+    }
     this.galleta.hornear();
   }
 

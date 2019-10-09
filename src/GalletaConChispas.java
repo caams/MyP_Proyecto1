@@ -6,7 +6,12 @@ public class GalletaConChispas extends Galleta{
   }
 
   @Override public void prepararMasa(){
-    System.out.println("Preparando masa para galletas ducles con chispas...");
+    System.out.println("Preparando masa para galletas galletas con chispas...");
+    try{
+      Thread.sleep(1000);
+    }catch(InterruptedException ie){
+      System.out.println("Hilo de ejecución interrumpido.");
+    }
     this.utilizarIngrediente("Harina");
     this.utilizarIngrediente("Leche");
     this.utilizarIngrediente("Huevo");
