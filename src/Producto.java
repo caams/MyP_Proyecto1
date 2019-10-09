@@ -7,11 +7,11 @@ import java.util.ArrayList;
 public abstract class Producto{
 
   /* El nombre del producto. */
-  private String nombre;
+  protected String nombre;
   /* Lista de ingredientes para el producto. */
-  private ArrayList<Ingrediente> ingredientes;
+  protected ArrayList<Ingrediente> ingredientes;
 
-  private Maquina maquina;
+  protected Maquina creador;
 
   /**
    * Regresa el nombre del producto.
@@ -33,12 +33,21 @@ public abstract class Producto{
     this.ingredientes = ingredientes;
   }
 
-  public void setMaquina(Maquina maquina){
-    this.maquina = maquina;
+  public void usarIngrediente(String ingrediente){
+    if(this.creador.getEstadoActual() instanceof EstadoActivado){
+      Ingrediente ing = this.getIngrediente(ingrediente);
+      System.out.println(String.format("  Agregando %2.2f kilos de %s...",
+                         ((double)ing.getCantidad())/1000, ing.getNombre()));
+      ing.drawIngredientes(this.creador);
+    }
   }
 
-  public Maquina getMaquina(){
-    return this.maquina;
+  public Ingrediente getIngrediente(String ingrediente){
+    for(Ingrediente i : this.getIngredientes()){
+      if(i.getNombre().equals(ingrediente))
+        return i;
+    }
+    return null;
   }
 
   /**
@@ -48,8 +57,11 @@ public abstract class Producto{
   public void preparaProducto(){
     elegirMolde();
     prepararBase();
-    enmoldar();
-    agregarComplemento();
+    if(this.creador.getEstadoActual() instanceof EstadoActivado){
+      enmoldar();
+      agregarComplemento();
+      System.out.println("Producto terminado!");
+    }
   }
 
   public abstract void elegirMolde();

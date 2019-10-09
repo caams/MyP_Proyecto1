@@ -5,10 +5,9 @@ import java.util.ArrayList;
  */
 public abstract class Maquina{
 
+  protected static Maquina instance;
   /* Los ingredientes disponibles para las máquinas. */
   protected ArrayList<Ingrediente> ingredientes;
-  /* Las recetas de cada producto. */
-  protected ArrayList<Producto> recetas;
   /* El estado actual de la máquina. */
   protected EstadoMaquina estadoActual;
   /* El estado suspendido de la máquina. */
@@ -107,13 +106,8 @@ public abstract class Maquina{
   }
 
   /* Pone la máquina en estado empacando. */
-  public void empacar(Producto producto){
-    this.estadoActual.empacar(producto);
-  }
-
-  /* Pone la máquina en estado entregando. */
-  public void entregar(){
-    this.estadoActual.entregar();
+  public Lote empacar(Producto producto, int cantidad){
+    return this.estadoActual.empacar(producto, cantidad);
   }
 
   /* Actualiza el estado de la máquina. */

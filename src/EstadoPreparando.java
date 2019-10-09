@@ -32,12 +32,8 @@ public class EstadoPreparando implements EstadoMaquina{
                        " está preparando un lote.");
   }
 
-  @Override public void empacar(Producto producto){
+  @Override public Lote empacar(Producto producto, int cantidad){
     System.out.println("La maquina no puede empacar mientras está preparando un lote.");
-  }
-
-  @Override public void entregar(){
-    System.out.println("La maquina no puede entregar pedidos mientras está"+
-                       " preparando un lote.");
+    return null;
   }
 }

@@ -17,22 +17,18 @@ public class Wonka3000 extends Maquina{
    * Constructor de la máquina Wonka3000.
    * @param la lista de ingredientes disponibles.
    */
-  public Wonka3000(ArrayList<Ingrediente> ingredientes){
-    ArrayList<Producto> recetas = new ArrayList<>();
-    Producto gusanito = new Gusanito();
-    Producto frutita = new Frutita();
-    Producto osito = new Osito();
-    Producto conLeche = new ChocolateConLeche();
-    Producto conAlmendra = new ChocolateConAlmendra();
-    Producto oscuro = new ChocolateOscuro();
-    recetas.add(gusanito);
-    recetas.add(frutita);
-    recetas.add(osito);
-    recetas.add(conLeche);
-    recetas.add(conAlmendra);
-    recetas.add(oscuro);
-    this.recetas = recetas;
-    this.ingredientes = ingredientes;
+  private Wonka3000(){
+    DulcesRosa dr = DulcesRosa.getInstance();
+    this.ingredientes = new ArrayList<Ingrediente>();
+    for(int i = 0; i <= 9; i++){
+      this.ingredientes.add(dr.ingredientes.get(i));
+    }
+  }
+
+  public static Maquina getInstance(){
+    if(instance == null)
+      instance = new Wonka3000();
+    return instance;
   }
 
   /**
@@ -49,7 +45,8 @@ public class Wonka3000 extends Maquina{
     tipo = tipo.toLowerCase();
     if(tipo.contains("chocolate"))
       return creaProducto1(tipo);
-    else if(tipo.contains("gomita"))
+    else if(tipo.contains("gusanito") || tipo.contains("frutita") ||
+            tipo.contains("osito"))
       return creaProducto2(tipo);
     return null;
     }

@@ -6,7 +6,9 @@ public class ReposteroEncargado{
     this.nombre = nombre;
   }
 
-  public void notificaMaquina(){
-
+  public void hacerPedido(String pedido, Sucursal sucursal, int cantidad){
+    JefeTecnico jt = new JefeTecnico();
+    ProxySucursal ps = new ProxySucursal(sucursal);
+    jt.procesarPedido(ps, pedido, cantidad);
   }
 }

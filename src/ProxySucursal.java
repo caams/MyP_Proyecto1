@@ -6,9 +6,16 @@ public class ProxySucursal extends Sucursal{
 
   public ProxySucursal(Sucursal sucursal){
     this.sucursal = sucursal;
+    this.id = sucursal.getID();
+    this.direccion = sucursal.getDireccion();
+    this.repostero = sucursal.getReposteroEncargado();
   }
 
-  public ArrayList<Lote> toArrayList(){
+  @Override public ArrayList<Lote> toArrayList(){
     return this.sucursal.toArrayList();
+  }
+
+  @Override public void agregaInventario(Lote lote){
+    this.sucursal.agregaInventario(lote);
   }
 }

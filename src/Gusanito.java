@@ -1,14 +1,15 @@
 public class Gusanito extends Gomita{
 
   public Gusanito(){
-    this.getIngredientes().add(new Ingrediente("Saborizante ácido", 10, 2000));
+    this.nombre = "Gusanitos Ácidos";
+    this.getIngredientes().add(new Ingrediente("Saborizante Acido", 9, 250));
   }
 
   @Override public void elegirMolde(){
-    System.out.println("Eligiendo molde de gusanitos");
+    System.out.println("Tomando molde de gusanitos...");
   }
 
   @Override public void agregarComplemento(){
-    System.out.println("Agregando cobertura ácida");
+    this.usarIngrediente("Saborizante Acido");
   }
 }

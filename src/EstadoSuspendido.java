@@ -37,13 +37,9 @@ public class EstadoSuspendido implements EstadoMaquina{
                        " se encuentra suspendida.");
   }
 
-  @Override public void empacar(Producto producto){
+  @Override public Lote empacar(Producto producto, int cantidad){
     System.out.println("La maquina no puede empacar un pedido mientras"+
                        " se encuentra suspendida.");
-  }
-
-  @Override public void entregar(){
-    System.out.println("La maquina no puede entregar un pedido mientras"+
-                       " se encuentra suspendida.");
+    return null;
   }
 }

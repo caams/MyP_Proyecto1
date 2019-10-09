@@ -19,18 +19,22 @@ public class Galleneitor5000 extends Maquina{
    * Constructor de la máquina Galleneitor5000.
    * @param lista la lista de ingredientes disponibles.
    */
-  public Galleneitor5000(ArrayList<Ingrediente> ingredientes){
-    this.ingredientes = ingredientes;
-    this.recetas = new ArrayList<Producto>();
-    Producto conMermelada = new GalletaAdapter(new GalletaConMermelada());
-    Producto conChispas = new GalletaAdapter(new GalletaConChispas());
-    Producto salada = new GalletaAdapter(new GalletaSalada());
-    recetas.add(conMermelada);
-    recetas.add(conChispas);
-    recetas.add(salada);
+  private Galleneitor5000(){
+    DulcesRosa dr = DulcesRosa.getInstance();
+    this.ingredientes = new ArrayList<Ingrediente>();
+    for(int i = 8; i < dr.ingredientes.size(); i++){
+      this.ingredientes.add(dr.ingredientes.get(i));
+    }
+  }
+
+  public static Maquina getInstance(){
+    if(instance == null)
+      instance = new Galleneitor5000();
+    return instance;
   }
 
   @Override public Producto creaProducto(String tipo){
+    tipo = tipo.toLowerCase();
     if(tipo.contains("salada")){
       return new GalletaAdapter(new GalletaSalada());
     }else if(tipo.contains("con chispas")){

@@ -2,13 +2,16 @@ import java.util.ArrayList;
 
 public class FactoryProducer{
 
-  public Maquina getFactory(String tipo, ArrayList<Ingrediente> ingredientes){
+  public Maquina getFactory(String tipo){
+    Maquina fabrica = null;
     tipo = tipo.toLowerCase();
-    if(tipo.contains("gomita") || tipo.contains("chocolate"))
-      return new Wonka3000(ingredientes);
-    else if(tipo.contains("galleta"))
-      return new Galleneitor5000(ingredientes);
-    return null;
+    if(tipo.contains("chocolate") || tipo.contains("gusanito") ||
+       tipo.contains("frutita") || tipo.contains("osito")){
+      fabrica = Wonka3000.getInstance();
+    }else if(tipo.contains("galleta")){
+      fabrica = Galleneitor5000.getInstance();
+    }
+    return fabrica;
   }
 
 }

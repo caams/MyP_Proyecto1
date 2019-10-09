@@ -1,7 +1,8 @@
 public class ChocolateConLeche extends Chocolate{
 
   public ChocolateConLeche(){
-    this.getIngredientes().add(new Ingrediente("Leche", 5, 2000));
+    this.nombre = "Chocolate con Leche";
+    this.getIngredientes().add(new Ingrediente("Leche", 3, 3200));
   }
 
   @Override public void prepararBase(){

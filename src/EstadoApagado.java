@@ -34,11 +34,8 @@ public class EstadoApagado implements EstadoMaquina{
     System.out.println("La maquina no se pudede reabastecer mientras está apagada.");
   }
 
-  @Override public void empacar(Producto producto){
+  @Override public Lote empacar(Producto producto, int cantidad){
     System.out.println("La maquina no puede empacar mientras está apagada.");
-  }
-
-  @Override public void entregar(){
-    System.out.println("La maquina no puede entregar paquetes mientras está apagada.");
+    return null;
   }
 }

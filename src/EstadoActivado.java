@@ -33,17 +33,17 @@ public class EstadoActivado implements EstadoMaquina{
   }
 
   @Override public void reabastecerse(Ingrediente ingrediente){
-    for(Ingrediente ingredint : this.maquina.getIngredientes()){
-      if(ingredint.getID() == ingrediente.getID())
-        ingredint.resetCantidad();
+    for(Ingrediente i : this.maquina.getIngredientes()){
+      if(i.getNombre() == ingrediente.getNombre())
+        i.resetCantidad();
     }
+    System.out.println("Entrando en estado de suspensión...");
+    this.maquina.actualizarEstado(this.maquina.getEstadoSuspendido());
+    System.out.println("Maquina en estado de suspensión.");
   }
 
-  @Override public void empacar(Producto producto){
-    Lote nuevoLote = new Lote(producto, 1000);
-  }
-
-  @Override public void entregar(){
-
+  @Override public Lote empacar(Producto producto, int cantidad){
+    Lote nuevoLote = new Lote(producto, cantidad);
+    return nuevoLote;
   }
 }

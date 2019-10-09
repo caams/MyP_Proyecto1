@@ -10,6 +10,10 @@ public class Lote{
     this.cantidad = cantidad;
   }
 
+  public String getNombre(){
+    return this.producto.getNombre();
+  }
+
   public Producto getProducto(){
     return this.producto;
   }

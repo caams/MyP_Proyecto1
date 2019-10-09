@@ -1,9 +1,10 @@
 public class ChocolateOscuro extends Chocolate{
 
  public ChocolateOscuro(){
+   this.nombre = "Chocolate Oscuro";
    for(Ingrediente ing : this.getIngredientes()){
      if(ing.getNombre() == "Cacao")
-       ing.setCantidad(3000);
+       ing.setCantidad(15000);
    }
  }
 

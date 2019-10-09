@@ -31,11 +31,8 @@ public class EstadoEmpacando implements EstadoMaquina{
     System.out.println("La maquina no se puede reabastecer mientras está empacando.");
   }
 
-  @Override public void empacar(Producto producto){
+  @Override public Lote empacar(Producto producto, int cantidad){
     System.out.println("La maquina solo puede empacar un lote a la vez.");
-  }
-
-  @Override public void entregar(){
-    System.out.println("La maquina no puede entregar pedidos mientras está empacando.");
+    return null;
   }
 }

@@ -1,18 +1,25 @@
+import java.util.ArrayList;
+
 public abstract class Gomita extends Producto{
 
   public Gomita(){
+    this.creador = Wonka3000.getInstance();
     this.setIngredientes(new ArrayList<Ingrediente>());
-    this.getIngredientes().add("Grenetina", 7, 2000);
-    this.getIngredientes().add("Agua", 8, 2000);
-    this.getIngredientes().add("Miel de maíz", 9, 2000);
-    this.getIngredientes().add("Azucar", 3, 2000);
+    this.getIngredientes().add(new Ingrediente("Grenetina", 5, 375));
+    this.getIngredientes().add(new Ingrediente("Agua", 6, 2950));
+    this.getIngredientes().add(new Ingrediente("Miel de maiz", 7, 1475));
+    this.getIngredientes().add(new Ingrediente("Azucar", 8, 5625));
   }
 
   @Override public void prepararBase(){
-    System.out.println("Preparando base para gomitas...");
+    System.out.println("Preparando base para gomitas:");
+    this.usarIngrediente("Agua");
+    this.usarIngrediente("Azucar");
+    this.usarIngrediente("Miel de maiz");
+    this.usarIngrediente("Grenetina");
   }
 
   @Override public void enmoldar(){
-    System.out.println("Vaciando mezcla en el molde");
+    System.out.println("Vaciando mezcla en el molde...");
   }
 }

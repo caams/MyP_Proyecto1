@@ -12,7 +12,5 @@ public interface EstadoMaquina{
 
   public void reabastecerse(Ingrediente ingrediente);
 
-  public void empacar(Producto producto);
-
-  public void entregar();
+  public Lote empacar(Producto producto, int cantidad);
 }

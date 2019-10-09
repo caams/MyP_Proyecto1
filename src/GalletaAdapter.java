@@ -4,6 +4,9 @@ public class GalletaAdapter extends Producto{
 
   public GalletaAdapter(Galleta galleta){
     this.galleta = galleta;
+    this.creador = Galleneitor5000.getInstance();
+    this.nombre = galleta.getNombre();
+    this.ingredientes = galleta.getIngredientes();
   }
 
   @Override public void elegirMolde(){

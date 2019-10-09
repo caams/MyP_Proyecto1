@@ -1,14 +1,18 @@
 public class ChocolateConAlmendra extends Chocolate{
 
   public ChocolateConAlmendra(){
-    this.getIngredientes().add(new Ingrediente("Almendra", 3, 2000));
+    this.nombre = "Chocolate con Almendra";
+    this.getIngredientes().add(new Ingrediente("Almendra", 1, 3000));
   }
 
   @Override public void prepararBase(){
-    System.out.println("Preparando base de chocolate");
+    System.out.println("Preparando base de chocolate:");
+    this.usarIngrediente("Manteca de Cacao");
+    this.usarIngrediente("Cacao");
+    this.usarIngrediente("Azucar");
   }
 
   @Override public void agregarComplemento(){
-    System.out.println("Agregando almendra");
+    this.usarIngrediente("Almendra");
   }
 }

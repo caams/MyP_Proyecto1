@@ -2,11 +2,42 @@ import java.util.ArrayList;
 
 public abstract class Galleta{
 
+  protected String nombre;
+  protected ArrayList<Ingrediente> ingredientes;
+  protected Maquina productora;
+
   public Galleta(){
-    this.setIngredientes(new ArrayList<Ingrediente>());
-    this.getIngredientes().add(new Ingrediente("Harina", 13, 2000));
-    this.getIngredientes().add(new Ingrediente("Leche", 5, 2000));
-    this.getIngredientes().add(new Ingrediente("Huevo", 14, 2000));
+    this.productora = Galleneitor5000.getInstance();
+    this.ingredientes = new ArrayList<Ingrediente>();
+    this.ingredientes.add(new Ingrediente("Harina", 11, 8850));
+    this.ingredientes.add(new Ingrediente("Azucar", 8, 7800));
+    this.ingredientes.add(new Ingrediente("Leche", 3, 5000));
+    this.ingredientes.add(new Ingrediente("Huevo", 12, 3000));
+  }
+
+  public String getNombre(){
+    return this.nombre;
+  }
+
+  public ArrayList<Ingrediente> getIngredientes(){
+    return this.ingredientes;
+  }
+
+  public void utilizarIngrediente(String ingrediente){
+    if(this.productora.getEstadoActual() instanceof EstadoActivado){
+      Ingrediente ing = this.getIngredient(ingrediente);
+      System.out.println(String.format("  Agregando %2.2f kilos de %s...",
+                         ((double)ing.getCantidad())/1000, ing.getNombre()));
+      ing.drawIngredientes(this.productora);
+    }
+  }
+
+  public Ingrediente getIngredient(String ingrediente){
+    for(Ingrediente i : this.getIngredientes()){
+      if(i.getNombre().equals(ingrediente))
+        return i;
+    }
+    return null;
   }
 
   public void prepararGalleta(){

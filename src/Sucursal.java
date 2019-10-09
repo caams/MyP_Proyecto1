@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public abstract class Sucursal{
 
-  private int id;
-  private String direccion;
-  private ReposteroEncargado repostero;
+  protected int id;
+  protected String direccion;
+  protected ReposteroEncargado repostero;
 
   public int getID(){
     return this.id;
@@ -25,6 +25,10 @@ public abstract class Sucursal{
       System.out.println("Producto: " + lote.getProducto().getNombre());
       System.out.println(String.format("Cantidad: %d\n", lote.getCantidad()));
     }
+  }
+
+  public void hacerPedido(String pedido, int cantidad){
+    this.repostero.hacerPedido(pedido, this, cantidad);
   }
 
   public abstract void agregaInventario(Lote lote);
