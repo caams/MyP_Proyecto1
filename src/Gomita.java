@@ -8,13 +8,13 @@ public abstract class Gomita extends Producto{
     this.getIngredientes().add(new Ingrediente("Grenetina", 5, 375));
     this.getIngredientes().add(new Ingrediente("Agua", 6, 2950));
     this.getIngredientes().add(new Ingrediente("Miel de maiz", 7, 1475));
-    this.getIngredientes().add(new Ingrediente("Azucar", 8, 5625));
+    this.getIngredientes().add(new Ingrediente("Azúcar", 8, 5625));
   }
 
   @Override public void prepararBase(){
     System.out.println("Preparando base para gomitas:");
     this.usarIngrediente("Agua");
-    this.usarIngrediente("Azucar");
+    this.usarIngrediente("Azúcar");
     this.usarIngrediente("Miel de maiz");
     this.usarIngrediente("Grenetina");
   }

@@ -29,7 +29,8 @@ public class Ingrediente{
   public void resetCantidad(){
     System.out.println("El suministro de " + this.nombre + " se ha agotado "
                        + "por lo que se reabastecerá.");
-    System.out.println("Se ha interrumpido el proceso de preparación de este producto.");
+    System.out.println("Se ha interrumpido el proceso de preparación de este " +
+                       "producto.");
     this.cantidad = 100000;
   }
 

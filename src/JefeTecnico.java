@@ -4,7 +4,8 @@ public class JefeTecnico{
     if(validarPedido(sucursal, pedido)){
       crearPedido(sucursal, pedido, cantidad);
     }else{
-      System.out.println("El pedido no ha sido validado pues la sucursal aún lo tiene en stock.");
+      System.out.println("El pedido no ha sido validado, pues la sucursal " +
+                         "aún lo tiene en stock.");
     }
   }
 
@@ -28,7 +29,7 @@ public class JefeTecnico{
     if(producto != null && entrega != null){
       deliver(sucursal, entrega);
     }else{
-      System.out.println("No fue posible completar el pedido");
+      System.out.println("No fue posible completar el pedido.");
       return;
     }
   }

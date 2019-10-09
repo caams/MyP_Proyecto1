@@ -7,23 +7,33 @@ public class EstadoActivado implements EstadoMaquina{
   }
 
   @Override public void encenderse(){
-    System.out.println("La maquina ya está encendida y activa.");
+    System.out.println("La máquina ya está encendida y activa.");
   }
 
   @Override public void activarse(){
-    System.out.println("La maquina ya está activa.");
+    System.out.println("La máquina ya está activa.");
   }
 
   @Override public void suspenderse(){
     System.out.println("Entrando en estado de suspensión...");
+    try{
+      Thread.sleep(1000);
+    }catch(InterruptedException ie){
+      System.out.println("Hilo de ejecución interrumpido.");
+    }
     maquina.actualizarEstado(maquina.getEstadoSuspendido());
-    System.out.println("Maquina en estado de suspensión.");
+    System.out.println("Máquina en estado de suspensión.");
   }
 
   @Override public void apagarse(){
-    System.out.println("Apagando maquina...");
+    System.out.println("Apagando máquina...");
+    try{
+      Thread.sleep(1000);
+    }catch(InterruptedException ie){
+      System.out.println("Hilo de ejecución interrumpido.");
+    }
     maquina.actualizarEstado(maquina.getEstadoApagado());
-    System.out.println("Maquina apagada.");
+    System.out.println("Máquina apagada.");
   }
 
   @Override public Producto prepararPedido(String tipo){
@@ -38,8 +48,13 @@ public class EstadoActivado implements EstadoMaquina{
         i.resetCantidad();
     }
     System.out.println("Entrando en estado de suspensión...");
+    try{
+      Thread.sleep(1000);
+    }catch(InterruptedException ie){
+      System.out.println("Hilo de ejecución interrumpido.");
+    }
     this.maquina.actualizarEstado(this.maquina.getEstadoSuspendido());
-    System.out.println("Maquina en estado de suspensión.");
+    System.out.println("Máquina en estado de suspensión.");
   }
 
   @Override public Lote empacar(Producto producto, int cantidad){

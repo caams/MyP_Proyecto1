@@ -10,7 +10,7 @@ public class GalletaConChispas extends Galleta{
     this.utilizarIngrediente("Harina");
     this.utilizarIngrediente("Leche");
     this.utilizarIngrediente("Huevo");
-    this.utilizarIngrediente("Azucar");
+    this.utilizarIngrediente("Azúcar");
     this.utilizarIngrediente("Chispas de Chocolate");
   }
 

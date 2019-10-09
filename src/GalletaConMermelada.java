@@ -2,7 +2,7 @@ public class GalletaConMermelada extends Galleta{
 
   public GalletaConMermelada(){
     this.nombre = "Galleta con Mermelada";
-    this.ingredientes.add(new Ingrediente("mermelada", 16, 10000));
+    this.ingredientes.add(new Ingrediente("Mermelada", 16, 10000));
   }
 
   @Override public void prepararMasa(){
@@ -10,7 +10,7 @@ public class GalletaConMermelada extends Galleta{
     this.utilizarIngrediente("Harina");
     this.utilizarIngrediente("Leche");
     this.utilizarIngrediente("Huevo");
-    this.utilizarIngrediente("Azucar");
+    this.utilizarIngrediente("Azúcar");
   }
 
   @Override public void agregarComplemento(){

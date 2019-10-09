@@ -7,7 +7,7 @@ public abstract class Chocolate extends Producto{
     this.setIngredientes(new ArrayList<Ingrediente>());
     this.getIngredientes().add(new Ingrediente("Cacao", 2, 12800));
     this.getIngredientes().add(new Ingrediente("Manteca de Cacao", 4, 12800));
-    this.getIngredientes().add(new Ingrediente("Azucar", 8, 6400));
+    this.getIngredientes().add(new Ingrediente("Azúcar", 8, 6400));
   }
 
   @Override public void elegirMolde(){

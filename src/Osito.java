@@ -2,7 +2,7 @@ public class Osito extends Gomita{
 
   public Osito(){
     this.nombre = "Ositos con Azúcar";
-    this.getIngredientes().add(new Ingrediente("Cobertura de azucar", 17, 1500));
+    this.getIngredientes().add(new Ingrediente("Cobertura de azúcar", 17, 1500));
   }
 
   @Override public void elegirMolde(){
@@ -10,6 +10,6 @@ public class Osito extends Gomita{
   }
 
   @Override public void agregarComplemento(){
-    System.out.println("Cobertura de azucar");
+    System.out.println("Cobertura de azúcar");
   }
 }

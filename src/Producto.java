@@ -56,10 +56,30 @@ public abstract class Producto{
    */
   public void preparaProducto(){
     elegirMolde();
+    try{
+      Thread.sleep(1000);
+    }catch(InterruptedException ie){
+      System.out.println("Hilo de ejecución interrumpido.");
+    }
     prepararBase();
+    try{
+      Thread.sleep(1000);
+    }catch(InterruptedException ie){
+      System.out.println("Hilo de ejecución interrumpido.");
+    }
     if(this.creador.getEstadoActual() instanceof EstadoActivado){
       enmoldar();
+      try{
+        Thread.sleep(1000);
+      }catch(InterruptedException ie){
+        System.out.println("Hilo de ejecución interrumpido.");
+      }
       agregarComplemento();
+      try{
+        Thread.sleep(1000);
+      }catch(InterruptedException ie){
+        System.out.println("Hilo de ejecución interrumpido.");
+      }
       System.out.println("Producto terminado!");
     }
   }

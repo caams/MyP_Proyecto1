@@ -15,7 +15,6 @@ public class Wonka3000 extends Maquina{
 
   /**
    * Constructor de la máquina Wonka3000.
-   * @param la lista de ingredientes disponibles.
    */
   private Wonka3000(){
     DulcesRosa dr = DulcesRosa.getInstance();

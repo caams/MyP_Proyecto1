@@ -10,7 +10,7 @@ public abstract class Galleta{
     this.productora = Galleneitor5000.getInstance();
     this.ingredientes = new ArrayList<Ingrediente>();
     this.ingredientes.add(new Ingrediente("Harina", 11, 8850));
-    this.ingredientes.add(new Ingrediente("Azucar", 8, 7800));
+    this.ingredientes.add(new Ingrediente("Azúcar", 8, 7800));
     this.ingredientes.add(new Ingrediente("Leche", 3, 5000));
     this.ingredientes.add(new Ingrediente("Huevo", 12, 3000));
   }
@@ -49,15 +49,15 @@ public abstract class Galleta{
   }
 
   public void elegirMolde(){
-    System.out.println("Tomando molde para galletas");
+    System.out.println("Tomando molde para galletas...");
   }
 
   public void enmoldar(){
-    System.out.println("Colocando la masa en los moldes");
+    System.out.println("Colocando la masa en los moldes...");
   }
 
   public void hornear(){
-    System.out.println("Hornenado las galletas");
+    System.out.println("Hornenado las galletas...");
   }
 
   public abstract void prepararMasa();

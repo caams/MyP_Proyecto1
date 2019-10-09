@@ -7,39 +7,50 @@ public class EstadoSuspendido implements EstadoMaquina{
   }
 
   @Override public void encenderse(){
-    System.out.println("La maquina ya está encendida.");
+    System.out.println("La máquina ya está encendida.");
   }
 
   @Override public void activarse(){
-    System.out.println("Activando la maquina...");
+    System.out.println("Activando la máquina...");
+    try{
+      Thread.sleep(1000);
+    }catch(InterruptedException ie){
+      System.out.println("Hilo de ejecución interrumpido.");
+    }
     this.maquina.actualizarEstado(this.maquina.getEstadoActivado());
-    System.out.println("Maquina activa.");
+    System.out.println("Máquina activa.");
   }
 
   @Override public void suspenderse(){
-    System.out.println("La maquina ya se encuentra encendida y en estado de suspensión.");
+    System.out.println("La máquina ya se encuentra encendida y en estado de " +
+                       "suspensión.");
   }
 
   @Override public void apagarse(){
-    System.out.println("Apagando maquina...");
+    System.out.println("Apagando máquina...");
+    try{
+      Thread.sleep(1000);
+    }catch(InterruptedException ie){
+      System.out.println("Hilo de ejecución interrumpido.");
+    }
     this.maquina.actualizarEstado(this.maquina.getEstadoApagado());
-    System.out.println("Maquina apagada.");
+    System.out.println("Máquina apagada.");
   }
 
   @Override public Producto prepararPedido(String tipo){
-    System.out.println("La maquina no puede preparar un pedido mientras"+
-                       " se encuentra suspendida.");
+    System.out.println("La máquina no puede preparar un pedido mientras " +
+                       "se encuentra suspendida.");
     return null;
   }
 
   @Override public void reabastecerse(Ingrediente ingrediente){
-    System.out.println("La maquina no puede reabastecerse mientras"+
-                       " se encuentra suspendida.");
+    System.out.println("La máquina no puede reabastecerse mientras " +
+                       "se encuentra suspendida.");
   }
 
   @Override public Lote empacar(Producto producto, int cantidad){
-    System.out.println("La maquina no puede empacar un pedido mientras"+
-                       " se encuentra suspendida.");
+    System.out.println("La máquina no puede empacar un pedido mientras " +
+                       "se encuentra suspendida.");
     return null;
   }
 }

@@ -49,7 +49,7 @@ public class DulcesRosa{
 
   public int getNumRepartidores(){
     int n = 0;
-    for(int i = 0; i <= repartidores.length -1; i++){
+    for(int i = 0; i <= repartidores.length - 1; i++){
       if(repartidores[i] != null)
         n++;
     }

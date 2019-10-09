@@ -9,7 +9,7 @@ public class ChocolateConAlmendra extends Chocolate{
     System.out.println("Preparando base de chocolate:");
     this.usarIngrediente("Manteca de Cacao");
     this.usarIngrediente("Cacao");
-    this.usarIngrediente("Azucar");
+    this.usarIngrediente("Azúcar");
   }
 
   @Override public void agregarComplemento(){
