@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * Clase abstracta Galleta
+ */
 public abstract class Galleta{
 
   protected String nombre;
