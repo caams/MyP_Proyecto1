@@ -6,11 +6,11 @@ import java.util.ArrayList;
  */
 public abstract class Producto{
 
-  /* El nombre del producto. */
+  /* El nombre protegido del producto. */
   protected String nombre;
-  /* Lista de ingredientes para el producto. */
+  /* Lista protegida de ingredientes para el producto. */
   protected ArrayList<Ingrediente> ingredientes;
-
+  /** Máquina protegida que creará los productos. */
   protected Maquina creador;
 
   /**
@@ -29,10 +29,19 @@ public abstract class Producto{
     return this.ingredientes;
   }
 
+  /**
+   * Los ingredientes de cada producto.
+   * @param ingredientes los ingredientes del producto.
+   */
   public void setIngredientes(ArrayList<Ingrediente> ingredientes){
     this.ingredientes = ingredientes;
   }
 
+  /**
+   * Si la máquina creadora tiene un estado aceptable agrega un ingrediente a la vez.
+   * Después de usar dicho ingrediente, se decrementa la cantidad del ingrediente usado.
+   * @param ingrediente el ingrediente para preparar el producto.
+   */
   public void usarIngrediente(String ingrediente){
     if(this.creador.getEstadoActual() instanceof EstadoActivado){
       Ingrediente ing = this.getIngrediente(ingrediente);
@@ -47,6 +56,11 @@ public abstract class Producto{
     }
   }
 
+  /**
+   * Método que regresa un ingrediente del tipo que se pide.
+   * @param ingrediente que se pide regresar.
+   * @return el ingrediente que se solicita si existe, null en otro caso.
+   */
   public Ingrediente getIngrediente(String ingrediente){
     for(Ingrediente i : this.getIngredientes()){
       if(i.getNombre().equals(ingrediente))
@@ -57,7 +71,7 @@ public abstract class Producto{
 
   /**
    * Método template para preparar la receta de cada producto.
-   * Todos los métodos que utiliza son hooks.
+   * Todos los métodos que utiliza son métodos hook.
    */
   public void preparaProducto(){
     elegirMolde();
@@ -89,8 +103,15 @@ public abstract class Producto{
     }
   }
 
+  /** Método abstracto que elige el molde del producto. */
   public abstract void elegirMolde();
+
+  /** Método abstracto que prepara la base del producto. */
   public abstract void prepararBase();
+
+  /** Método abstracto que enmolda al producto. */
   public abstract void enmoldar();
+
+  /** Método abstracto que agrega un complemento al producto. */
   public abstract void agregarComplemento();
 }

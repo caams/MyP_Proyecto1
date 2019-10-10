@@ -33,6 +33,10 @@ public abstract class Maquina{
     this.estadoActual = apagado;
   }
 
+  /**
+   * Regresa los ingredientes de la máquina.
+   * @return los ingredientes de la máquina.
+   */
   public ArrayList<Ingrediente> getIngredientes(){
     return this.ingredientes;
   }
@@ -77,6 +81,7 @@ public abstract class Maquina{
     return this.empacando;
   }
 
+  /* Enciende la máquina. */
   public void encenderse(){
     this.estadoActual.encenderse();
   }
@@ -96,6 +101,7 @@ public abstract class Maquina{
     this.estadoActual.apagarse();
   }
 
+  /* Pone a la máquina a preparar el pedido que reciba. */
   public Producto prepararPedido(String tipo){
     return this.estadoActual.prepararPedido(tipo);
   }
