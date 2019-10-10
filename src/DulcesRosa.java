@@ -14,13 +14,13 @@ public class DulcesRosa{
     sucursales.add(new Sucursal3());
 
     repartidores = new Repartidor[10];
-    repartidores[0] = new Repartidor("1", 2, "3");
-    repartidores[1] = new Repartidor("2", 3, "4");
-    repartidores[2] = new Repartidor("3", 4, "5");
-    repartidores[3] = new Repartidor("4", 5, "6");
-    repartidores[4] = new Repartidor("5", 6, "7");
-    repartidores[5] = new Repartidor("6", 7, "8");
-    repartidores[6] = new Repartidor("7", 8, "9");
+    repartidores[0] = new Repartidor("Giles Ibarra", 1, "BL49KS8N22");
+    repartidores[1] = new Repartidor("Louile Jefferson", 2, "A04XX2V88");
+    repartidores[2] = new Repartidor("Federico Devine", 3, "CX06FK433");
+    repartidores[3] = new Repartidor("Asiyah Conroy", 4, "M33X6LM66");
+    repartidores[4] = new Repartidor("Alfie-Lee Lopez", 5, "G06DA9011");
+    repartidores[5] = new Repartidor("Libbi Rennie", 6, "E8R90GQ55");
+    repartidores[6] = new Repartidor("Lex Franco", 7, "FR41HG500");
 
     ingredientes = new ArrayList<Ingrediente>();
     ingredientes.add(new Ingrediente("Almendra", 1, 100000));

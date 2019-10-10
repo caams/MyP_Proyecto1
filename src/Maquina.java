@@ -30,6 +30,10 @@ public abstract class Maquina{
     this.estadoActual = apagado;
   }
 
+  /**
+   * Regresa el nombre de la maquina.
+   * @return el nombre de la maquina.
+   */
   public String getNombre(){
     return this.nombre;
   }
@@ -37,7 +41,8 @@ public abstract class Maquina{
   public ArrayList<Ingrediente> getIngredientes(){
     return this.ingredientes;
   }
-  
+
+  /* Enciende la máquina. */
   public void encenderse(){
     this.estadoActual.encenderse();
   }
@@ -47,6 +52,7 @@ public abstract class Maquina{
     this.estadoActual.apagarse();
   }
 
+  /* Pone a la máquina a preparar el pedido que reciba. */
   public Producto prepararPedido(String tipo){
     return this.estadoActual.prepararPedido(tipo);
   }

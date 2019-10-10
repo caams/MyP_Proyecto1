@@ -7,7 +7,7 @@ public class Sucursal2 extends Sucursal{
   public Sucursal2(){
     this.id = 2;
     this.direccion = "Avenida Miguel Hidalgo";
-    this.repostero = new ReposteroEncargado("duh");
+    this.repostero = new ReposteroEncargado("Tahla Cousins");
     this.inventario = new ArrayList<Lote>();
   }
 

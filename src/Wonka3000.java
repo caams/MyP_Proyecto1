@@ -27,6 +27,11 @@ public class Wonka3000 extends Maquina{
     }
   }
 
+  /**
+   * Regresa la instancia de la máquina Wonka3000.
+   * Si no existe una instancia de la máquina, la crea.
+   * @return la instancia de Wonka3000.
+   */
   public static Maquina getInstance(){
     if(instance == null)
       instance = new Wonka3000();

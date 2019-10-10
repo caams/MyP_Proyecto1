@@ -8,7 +8,7 @@ public class Sucursal1 extends Sucursal{
   public Sucursal1(){
     this.id = 1;
     this.direccion = "Calzada de los Jinetes";
-    this.repostero = new ReposteroEncargado("feo");
+    this.repostero = new ReposteroEncargado("Melissa Rawlings");
     this.inventario = new LinkedList<Lote>();
   }
 

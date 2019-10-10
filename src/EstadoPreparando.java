@@ -27,6 +27,8 @@ public class EstadoPreparando implements EstadoMaquina{
         i.resetCantidad();
     }
     this.maquina.actualizarEstado(maquina.suspendido);
+    System.out.println("La maquina " + maquina.getNombre() +
+                       " ha entrado en estado de suspensión.");
   }
 
   @Override public Lote empacar(Producto producto, int cantidad){

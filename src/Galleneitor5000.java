@@ -30,12 +30,29 @@ public class Galleneitor5000 extends Maquina{
     }
   }
 
+  /**
+   * Regresa la instancia de la máquina Galleneitor5000.
+   * Si no existe una instancia de la máquina, la crea.
+   * @return la instancia de Galleneitor5000.
+   */
   public static Maquina getInstance(){
     if(instance == null)
       instance = new Galleneitor5000();
     return instance;
   }
 
+  /**
+   * Crea un diferente tipo de galleta dependiendo del string que reciba.
+   * <ol>
+   *  <li>Tipo salada:
+   *  @return una galleta salada. </li>
+   *  <li> Tipo con chispas:
+   *  @return una galleta con chispas. </li>
+   *  <li> Tipo con mermelada:
+   *  @return una galleta con mermelada. </li>
+   * </ol>
+   * @return null en otro caso.
+   */
   @Override public Producto creaProducto(String tipo){
     tipo = tipo.toLowerCase();
     if(tipo.contains("salada")){
