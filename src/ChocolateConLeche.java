@@ -6,7 +6,11 @@ public class ChocolateConLeche extends Chocolate{
   }
 
   @Override public void prepararBase(){
-    System.out.println("Preparando base de chocolate con leche");
+    System.out.println("Preparando base de Chocolate con Leche:");
+    this.usarIngrediente("Manteca de Cacao");
+    this.usarIngrediente("Cacao");
+    this.usarIngrediente("Azúcar");
+    this.usarIngrediente("Leche");
   }
 
   @Override public void agregarComplemento(){}

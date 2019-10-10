@@ -3,28 +3,39 @@ public class JefeTecnico{
   public void procesarPedido(Sucursal sucursal, String pedido, int cantidad){
     if(validarPedido(sucursal, pedido)){
       crearPedido(sucursal, pedido, cantidad);
-    }else{
-      System.out.println("El pedido no ha sido validado, pues la sucursal " +
-                         "aún lo tiene en stock.");
     }
   }
 
   public boolean validarPedido(Sucursal sucursal, String pedido){
+    FactoryProducer fp = new FactoryProducer();
+    Maquina m = fp.getFactory(pedido);
+    Producto p = m.creaProducto(pedido);
+    if(p == null){
+      System.out.println("El pedido no ha sido validado pues no "+
+                         "existe dentro de las ofertas de Dulces Rosa®.");
+      return false;
+    }
     for(Lote lote : sucursal.toArrayList()){
-      if(lote.getNombre().equalsIgnoreCase(pedido))
+      if(lote.getNombre().equalsIgnoreCase(pedido)){
+        System.out.println("El pedido no ha sido validado pues la sucursal " +
+                           "aún lo tiene en stock.");
         return false;
+      }
     }
     return true;
   }
 
   public void crearPedido(Sucursal sucursal, String pedido, int cantidad){
+    System.out.println("El pedido ha sido validado.\n");
     FactoryProducer fp = new FactoryProducer();
     Maquina maquina = fp.getFactory(pedido);
     if(maquina.getEstadoActual() instanceof EstadoApagado)
       maquina.encenderse();
-    if(maquina.getEstadoActual() instanceof EstadoSuspendido)
-      maquina.activarse();
+    //   maquina.activarse();
     Producto producto = maquina.prepararPedido(pedido);
+    if(maquina.getEstadoActual() instanceof EstadoSuspendido){
+      return;
+    }
     Lote entrega = maquina.empacar(producto, cantidad);
     if(producto != null && entrega != null){
       deliver(sucursal, entrega);

@@ -31,8 +31,8 @@ public class DulcesRosa{
     ingredientes.add(new Ingrediente("Miel de maiz", 6, 100000));
     ingredientes.add(new Ingrediente("Saborizante Acido", 7, 100000));
     ingredientes.add(new Ingrediente("Chamoy", 8, 100000));
-    ingredientes.add(new Ingrediente("Azucar", 9, 100000));
-    ingredientes.add(new Ingrediente("Leche", 10, 100000));
+    ingredientes.add(new Ingrediente("Azúcar", 9, 100000));
+    ingredientes.add(new Ingrediente("Leche", 10, 100));
     ingredientes.add(new Ingrediente("Harina", 11, 100000));
     ingredientes.add(new Ingrediente("Huevo", 12, 100000));
     ingredientes.add(new Ingrediente("Sal", 13, 100000));
@@ -61,8 +61,16 @@ public class DulcesRosa{
     Sucursal s1 = dr.sucursales.get(0);
     Sucursal s2 = dr.sucursales.get(1);
     Sucursal s3 = dr.sucursales.get(2);
-    // s1.hacerPedido("chocolate con almendra", 5);
-    // s1.hacerPedido("gusanito", 2);
-    s2.hacerPedido("galleta con chispas", 4);
+    s1.hacerPedido("Chocolate con Almendra", 5);
+    s1.hacerPedido("Chocolate con Leche", 1);
+    s2.hacerPedido("Galleta con Chispas", 4);
+    s3.hacerPedido("Chocolate Oscuro", 3);
+    s2.hacerPedido("Galleta con Chispas", 1);
+    s3.hacerPedido("Chocolate con Café", 2);
+
+    System.out.println("INVENTARIO GENERAL DE LAS SUCURSALES\n");
+    for(Sucursal s : dr.sucursales){
+      s.displayInventario();
+    }
   }
 }
