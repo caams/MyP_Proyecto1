@@ -1,5 +1,5 @@
 /**
- * Interfaz para los estados de la máquina. 
+ * Interfaz para los estados de la máquina.
  * Implementa el patrón State.
  */
 public interface EstadoMaquina{
@@ -7,13 +7,7 @@ public interface EstadoMaquina{
   /* Enciende la máquina. */
   public void encenderse();
 
-  /* Activa la máquina. */
-  public void activarse();
-
-  /* Suspende la máquina. */
-  public void suspenderse();
-
-  /* Apaga la máquina. */
+  /* Apaga la maquina. */
   public void apagarse();
 
   /**

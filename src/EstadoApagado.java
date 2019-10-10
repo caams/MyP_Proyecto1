@@ -7,42 +7,35 @@ public class EstadoApagado implements EstadoMaquina{
   }
 
   @Override public void encenderse(){
-    System.out.println("Encendiendo máquina...");
+    System.out.println("Encendiendo " + maquina.getNombre() + "...");
     try{
       Thread.sleep(1000);
     }catch(InterruptedException ie){
       System.out.println("Hilo de ejecución interrumpido.");
     }
-    this.maquina.actualizarEstado(maquina.getEstadoSuspendido());
-    System.out.println("Máquina encendida y en estado de suspensión.");
-  }
-
-  @Override public void activarse(){
-    System.out.println("La máquina debe encenderse antes de poder activarse.");
-  }
-
-  @Override public void suspenderse(){
-    System.out.println("La máquina no puede entar en modo de suspensión " +
-                       "cuando está apagada.");
+    this.maquina.actualizarEstado(maquina.suspendido);
+    System.out.println(maquina.getNombre() + " encendida y en estado de suspensión.\n");
   }
 
   @Override public void apagarse(){
-    System.out.println("La máquina ya está apagada.");
+    System.out.println("La máquina "+ maquina.getNombre() +" ya está apagada.");
   }
 
   @Override public Producto prepararPedido(String tipo){
-    System.out.println("La máquina no pude preparar dulces mientras está " +
+    System.out.println("La máquina "+ maquina.getNombre() +
+                       " no pude preparar dulces mientras está " +
                        "apagada");
     return null;
   }
 
   @Override public void reabastecerse(Ingrediente ingrediente){
-    System.out.println("La máquina no se pudede reabastecer mientras está " +
-                       "apagada.");
+    System.out.println("La máquina " + maquina.getNombre() +
+                       " no se pudede reabastecer mientras está apagada.");
   }
 
   @Override public Lote empacar(Producto producto, int cantidad){
-    System.out.println("La máquina no puede empacar mientras está apagada.");
+    System.out.println("La máquina "+ maquina.getNombre() +
+                       " no puede empacar mientras está apagada.");
     return null;
   }
 }

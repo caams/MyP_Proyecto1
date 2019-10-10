@@ -7,36 +7,32 @@ public class EstadoPreparando implements EstadoMaquina{
   }
 
   @Override public void encenderse(){
-    System.out.println("La máquina ya está encendida.");
-  }
-
-  @Override public void activarse(){
-    System.out.println("La máquina ya está activada.");
-  }
-
-  @Override public void suspenderse(){
-    System.out.println("La máquina no se puede suspender mientras se prepara " +
-                       "un lote.");
+    System.out.println("La máquina "+ maquina.getNombre() +" ya está encendida.");
   }
 
   @Override public void apagarse(){
-    System.out.println("La máquina no se puede apagar mientras se prepara un " +
-                       "lote.");
+    System.out.println("La máquina "+ maquina.getNombre() +
+                       " no se puede apagar mientras prepara un lote.");
   }
 
   @Override public Producto prepararPedido(String tipo){
-    System.out.println("La máquina sólo puede preparar un dulce a la vez.");
-    return null;
+    Producto producto = this.maquina.creaProducto(tipo);
+    producto.preparaProducto();
+    return producto;
   }
 
   @Override public void reabastecerse(Ingrediente ingrediente){
-    System.out.println("La máquina no se puede reabastecer mientras " +
-                       "está preparando un lote.");
+    for(Ingrediente i : this.maquina.getIngredientes()){
+      if(i.getNombre() == ingrediente.getNombre())
+        i.resetCantidad();
+    }
+    this.maquina.actualizarEstado(maquina.suspendido);
+    System.out.println("La maquina " + maquina.getNombre() +
+                       " ha entrado en estado de suspensión.");
   }
 
   @Override public Lote empacar(Producto producto, int cantidad){
-    System.out.println("La máquina no puede empacar mientras está preparando " +
-                       "un lote.");
-    return null;
+    this.maquina.actualizarEstado(maquina.empacando);
+    return this.maquina.empacar(producto, cantidad);
   }
 }

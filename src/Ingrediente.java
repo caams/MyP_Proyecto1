@@ -58,11 +58,11 @@ public class Ingrediente{
 
   /**
    * Reestablece la cantidad disponible de un ingrediente después
-   * de que se acaba el suministro de dicho ingrediente o no hay 
+   * de que se acaba el suministro de dicho ingrediente o no hay
    * suficiente cantidad del ingrediente para preparar un producto.
    */
   public void resetCantidad(){
-    System.out.println("El suministro de " + this.nombre + " se ha agotado "
+    System.out.println("\nEl suministro de " + this.nombre + " se ha agotado "
                        + "por lo que se reabastecerá.");
     System.out.println("Se ha interrumpido el proceso de preparación de este " +
                        "producto.");
@@ -82,7 +82,7 @@ public class Ingrediente{
   }
 
   /**
-   * Método que permite usar un ingrediente dependiendo de si hay 
+   * Método que permite usar un ingrediente dependiendo de si hay
    * suficiente cantidad para preparar alguna receta y se resta la
    * cantidad del ingrediente que se utilizó. Si no hay suficiente
    * cantidad se reabastece del ingrediente utilizado.

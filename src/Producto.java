@@ -43,7 +43,7 @@ public abstract class Producto{
    * @param ingrediente el ingrediente para preparar el producto.
    */
   public void usarIngrediente(String ingrediente){
-    if(this.creador.getEstadoActual() instanceof EstadoActivado){
+    if(this.creador.getEstadoActual() instanceof EstadoPreparando){
       Ingrediente ing = this.getIngrediente(ingrediente);
       System.out.println(String.format("  Agregando %2.2f kilos de %s...",
                          ((double)ing.getCantidad())/1000, ing.getNombre()));
@@ -74,6 +74,7 @@ public abstract class Producto{
    * Todos los métodos que utiliza son métodos hook.
    */
   public void preparaProducto(){
+    System.out.println("Preparando un pedido de " + this.getNombre() +":");
     elegirMolde();
     try{
       Thread.sleep(1000);
@@ -86,7 +87,7 @@ public abstract class Producto{
     }catch(InterruptedException ie){
       System.out.println("Hilo de ejecución interrumpido.");
     }
-    if(this.creador.getEstadoActual() instanceof EstadoActivado){
+    if(this.creador.getEstadoActual() instanceof EstadoPreparando){
       enmoldar();
       try{
         Thread.sleep(1000);
@@ -99,7 +100,7 @@ public abstract class Producto{
       }catch(InterruptedException ie){
         System.out.println("Hilo de ejecución interrumpido.");
       }
-      System.out.println("Producto terminado!");
+      System.out.println("¡Pedido terminado!\n");
     }
   }
 

@@ -5,15 +5,13 @@ import java.util.ArrayList;
  */
 public abstract class Maquina{
 
-  protected static Maquina instance;
+  protected String nombre;
   /* Los ingredientes disponibles para las máquinas. */
   protected ArrayList<Ingrediente> ingredientes;
   /* El estado actual de la máquina. */
   protected EstadoMaquina estadoActual;
   /* El estado suspendido de la máquina. */
   protected EstadoMaquina suspendido;
-  /* El estado activado de la maquina. */
-  protected EstadoMaquina activado;
   /* El estado apagado de la máquina. */
   protected EstadoMaquina apagado;
   /* El estado preparando de la máquina. */
@@ -26,7 +24,6 @@ public abstract class Maquina{
    */
   public Maquina(){
     this.suspendido = new EstadoSuspendido(this);
-    this.activado = new EstadoActivado(this);
     this.apagado = new EstadoApagado(this);
     this.preparando = new EstadoPreparando(this);
     this.empacando = new EstadoEmpacando(this);
@@ -34,66 +31,20 @@ public abstract class Maquina{
   }
 
   /**
-   * Regresa los ingredientes de la máquina.
-   * @return los ingredientes de la máquina.
+   * Regresa el nombre de la maquina.
+   * @return el nombre de la maquina.
    */
+  public String getNombre(){
+    return this.nombre;
+  }
+
   public ArrayList<Ingrediente> getIngredientes(){
     return this.ingredientes;
-  }
-
-  /**
-   * Regresa el estado suspendido de la máquina.
-   * @return el estado suspendido de la máquina.
-   */
-  public EstadoMaquina getEstadoSuspendido(){
-    return this.suspendido;
-  }
-
-  /**
-   * Regresa el estado activado de la máquina.
-   * @return el estado activado de la máquina.
-   */
-  public EstadoMaquina getEstadoActivado(){
-    return this.activado;
-  }
-
-  /**
-   * Regresa el estado apagado de la máquina.
-   * @return el estado apagado de la máquina.
-   */
-  public EstadoMaquina getEstadoApagado(){
-    return this.apagado;
-  }
-
-  /**
-   * Regresa el estado preparando de la máquina.
-   * @return el estado preparando de la máquina.
-   */
-  public EstadoMaquina getEstadoPreparando(){
-    return this.preparando;
-  }
-
-  /**
-   * Regresa el estado empacando de la máquina.
-   * @return el estado empacando de la máquina.
-   */
-  public EstadoMaquina getEstadoEmpacando(){
-    return this.empacando;
   }
 
   /* Enciende la máquina. */
   public void encenderse(){
     this.estadoActual.encenderse();
-  }
-
-  /* Activa la máquina. */
-  public void activarse(){
-    this.estadoActual.activarse();
-  }
-
-  /* Suspende la máquina. */
-  public void suspenderse(){
-    this.estadoActual.suspenderse();
   }
 
   /* Apaga la máquina. */

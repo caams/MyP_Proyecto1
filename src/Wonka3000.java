@@ -13,10 +13,13 @@ import java.util.ArrayList;
  */
 public class Wonka3000 extends Maquina{
 
+  private static Maquina instance;
+
   /**
    * Constructor de la máquina Wonka3000.
    */
   private Wonka3000(){
+    this.nombre = "Wonka 3000";
     DulcesRosa dr = DulcesRosa.getInstance();
     this.ingredientes = new ArrayList<Ingrediente>();
     for(int i = 0; i <= 9; i++){
@@ -65,7 +68,7 @@ public class Wonka3000 extends Maquina{
    * </ol>
    * @return null en otro caso.
    */
-  public Producto creaProducto1(String tipo){
+  private Producto creaProducto1(String tipo){
     if(tipo.contains("oscuro"))
       return new ChocolateOscuro();
     else if(tipo.contains("con leche"))
@@ -85,7 +88,7 @@ public class Wonka3000 extends Maquina{
    * </ol>
    * @return null en otro caso.
    */
-  public Producto creaProducto2(String tipo){
+  private Producto creaProducto2(String tipo){
     if(tipo.contains("frutita"))
       return new Frutita();
     else if(tipo.contains("gusanito"))

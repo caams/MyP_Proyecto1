@@ -15,11 +15,14 @@ import java.util.ArrayList;
  */
 public class Galleneitor5000 extends Maquina{
 
+  private static Maquina instance;
+
   /**
    * Constructor de la máquina Galleneitor5000.
    * @param lista la lista de ingredientes disponibles.
    */
   private Galleneitor5000(){
+    this.nombre = "Galleneitor 5000";
     DulcesRosa dr = DulcesRosa.getInstance();
     this.ingredientes = new ArrayList<Ingrediente>();
     for(int i = 8; i < dr.ingredientes.size(); i++){

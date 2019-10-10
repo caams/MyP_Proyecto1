@@ -9,11 +9,10 @@ public class ChocolateOscuro extends Chocolate{
  }
 
   @Override public void prepararBase(){
-    System.out.println("Preparando base de chocolate oscuro...");
-    for(Ingrediente ing : this.getIngredientes()){
-      System.out.println(String.format("Agregando %d gramos de %s",
-                         ing.getCantidad(), ing.getNombre()));
-    }
+    System.out.println("Preparando base de Chocolate Oscuro...");
+    this.usarIngrediente("Manteca de Cacao");
+    this.usarIngrediente("Cacao");
+    this.usarIngrediente("Azúcar");
   }
 
   @Override public void agregarComplemento(){}

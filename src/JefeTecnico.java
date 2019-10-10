@@ -1,6 +1,6 @@
 /**
  * Clase del Jefe Técnico. Un jefe técnico controla la máquina a través
- * de una consola. También debe organizar a un grupo de repartidores 
+ * de una consola. También debe organizar a un grupo de repartidores
  * para transportar los dulces a las distintas sucursales.
  */
 public class JefeTecnico{
@@ -14,9 +14,6 @@ public class JefeTecnico{
   public void procesarPedido(Sucursal sucursal, String pedido, int cantidad){
     if(validarPedido(sucursal, pedido)){
       crearPedido(sucursal, pedido, cantidad);
-    }else{
-      System.out.println("El pedido no ha sido validado, pues la sucursal " +
-                         "aún lo tiene en stock.");
     }
   }
 
@@ -27,9 +24,20 @@ public class JefeTecnico{
    * @return true si el pedido es válido, false en otro caso.
    */
   public boolean validarPedido(Sucursal sucursal, String pedido){
+    FactoryProducer fp = new FactoryProducer();
+    Maquina m = fp.getFactory(pedido);
+    Producto p = m.creaProducto(pedido);
+    if(p == null){
+      System.out.println(String.format("El pedido no ha sido validado pues '%s' no "+
+                         "existe dentro de las ofertas de Dulces Rosa®.", pedido));
+      return false;
+    }
     for(Lote lote : sucursal.toArrayList()){
-      if(lote.getNombre().equalsIgnoreCase(pedido))
+      if(lote.getNombre().equalsIgnoreCase(pedido)){
+        System.out.println("El pedido no ha sido validado pues la sucursal " +
+                           "aún lo tiene en stock.");
         return false;
+      }
     }
     return true;
   }
@@ -44,13 +52,16 @@ public class JefeTecnico{
    * en otro caso se imprime que no pudo ser completado.
    */
   public void crearPedido(Sucursal sucursal, String pedido, int cantidad){
+    System.out.println("El pedido ha sido validado.\n");
     FactoryProducer fp = new FactoryProducer();
     Maquina maquina = fp.getFactory(pedido);
     if(maquina.getEstadoActual() instanceof EstadoApagado)
       maquina.encenderse();
-    if(maquina.getEstadoActual() instanceof EstadoSuspendido)
-      maquina.activarse();
+    //   maquina.activarse();
     Producto producto = maquina.prepararPedido(pedido);
+    if(maquina.getEstadoActual() instanceof EstadoSuspendido){
+      return;
+    }
     Lote entrega = maquina.empacar(producto, cantidad);
     if(producto != null && entrega != null){
       deliver(sucursal, entrega);
@@ -61,7 +72,7 @@ public class JefeTecnico{
   }
 
   /**
-   * Método que  hace a un repartidor entregar el pedido a la sucursal 
+   * Método que  hace a un repartidor entregar el pedido a la sucursal
    * que lo solicitó en caso de ser completado con éxito.
    * @param sucursal a entregar el pedido solicitado.
    * @param entrega el lote a entregar a la sucursal.

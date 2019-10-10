@@ -27,7 +27,7 @@ public abstract class Galleta{
   }
 
   public void utilizarIngrediente(String ingrediente){
-    if(this.productora.getEstadoActual() instanceof EstadoActivado){
+    if(this.productora.getEstadoActual() instanceof EstadoPreparando){
       Ingrediente ing = this.getIngredient(ingrediente);
       System.out.println(String.format("  Agregando %2.2f kilos de %s...",
                          ((double)ing.getCantidad())/1000, ing.getNombre()));

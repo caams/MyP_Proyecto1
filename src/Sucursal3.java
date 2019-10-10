@@ -9,7 +9,7 @@ public class Sucursal3 extends Sucursal{
   public Sucursal3(){
     this.id = 3;
     this.direccion = "Boulevard Ignacio Zaragoza";
-    this.repostero = new ReposteroEncargado("ash");
+    this.repostero = new ReposteroEncargado("Paisley Archer");
     this.inventario = new Hashtable<Integer, Lote>();
   }
 
